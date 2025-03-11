@@ -9,7 +9,7 @@ export class UsersService {
 
   constructor() { }
 
-  itemList: Users[] = [
+  groceriesList: Users[] = [
     {
       id_users: 1,
       username: 'wah',

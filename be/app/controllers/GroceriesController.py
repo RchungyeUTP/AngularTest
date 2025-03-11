@@ -10,6 +10,11 @@ def GetAllGroceries():
         payload=[groceries.as_dict() for groceries in groceries], status=200)
 
 
+def GetGroceriesById(id_grocery):
+    grocery = Groceries.query.get(id_grocery)
+    return ControllerObject(payload=grocery.as_dict() if grocery else None, status=200 if grocery else 404)
+
+
 def SaveGroceries(request):
     ret = ControllerObject()
     try:

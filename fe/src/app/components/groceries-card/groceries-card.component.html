@@ -1,0 +1,21 @@
+<section>
+    <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ groceries.name }}</mat-card-title>
+            <mat-card-subtitle>{{ groceries.price }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="groceries.photo" alt="Photo of {{ groceries.name }}">
+        <mat-card-content>
+            <p>{{ groceries.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-stroked-button *ngIf="groceries?.id_groceries">
+                <a [routerLink]="'/groceriesDetails/2'" routerLinkActive="router-link-active">
+                  Ver Detalles
+                </a>
+              </button>              
+        </mat-card-actions>
+    </mat-card>
+    <app-groceries-details></app-groceries-details>
+</section>

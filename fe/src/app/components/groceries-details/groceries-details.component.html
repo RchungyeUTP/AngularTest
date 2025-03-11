@@ -1,0 +1,11 @@
+<section class="d-flex justify-content-center align-items-center">
+    <div class="card" *ngIf="groceries" style="width: 450px;">
+        <img src="{{ groceries.photo }}" class="card-img-top"
+            style="max-width: 400px; max-height: 400px; object-fit: cover;" alt="Photo of {{ groceries.name }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ groceries.name }}</h5>
+            <p class="card-text">{{ groceries.description }}</p>
+            <p class="card-text"><strong>Precio:</strong> {{ groceries.price }}</p>
+        </div>
+    </div>
+</section>
