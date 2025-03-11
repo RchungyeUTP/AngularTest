@@ -1,14 +1,13 @@
 <section class="container">
-    <section class="d-flex justify-content-center my-3">
-      <button mat-stroked-button>
-        <a [routerLink]="['/login']" routerLinkActive="router-link-active">Iniciar Sesión</a>
-      </button>
-    </section>
-  
-    <section class="d-flex flex-wrap justify-content-center">
-      <div *ngFor="let item of itemList" class="example-card">
-        <app-item-card [item]="item"></app-item-card>
-      </div>
-    </section>
+  <section class="d-flex justify-content-center my-3">
+    <button mat-stroked-button>
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active">Iniciar Sesión</a>
+    </button>
   </section>
-  
+
+  <section class="d-flex flex-wrap justify-content-center">
+    <div *ngFor="let item of itemList" class="example-card">
+      <app-item-card [item]="item"></app-item-card>
+    </div>
+  </section>
+</section>
