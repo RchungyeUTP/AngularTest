@@ -11,8 +11,9 @@ def GetAllGroceries():
 
 
 def GetGroceriesById(id_grocery):
-    grocery = Groceries.query.get(id_grocery)
-    return ControllerObject(payload=grocery.as_dict() if grocery else None, status=200 if grocery else 404)
+    grocery = Groceries.query.filter(Groceries.id_groceries == id_grocery).first()
+    query = grocery.as_dict() if grocery else None
+    return ControllerObject(payload=query, status=200)
 
 
 def SaveGroceries(request):
@@ -38,9 +39,9 @@ def SaveGroceries(request):
 def EditGroceries(request):
     ret = ControllerObject()
     try:
-        grocery = Groceries.query.filter(Groceries.id == request.get("id")).first()
+        grocery = Groceries.query.filter(Groceries.id_groceries == request.get("id_groceries")).first()
         grocery.name = request.get("name"),
-        grocery.price = request.get("solicitud_estado"),
+        grocery.price = request.get("price"),
         grocery.description = request.get("description"),
         grocery.photo = request.get("photo")
         db.session.add(grocery)
@@ -57,7 +58,7 @@ def EditGroceries(request):
 def DeleteGroceries(id_groceries):
     ret = ControllerObject()
     try:
-        Groceries.query.filter(Groceries.id == id_groceries).delete()
+        Groceries.query.filter(Groceries.id_groceries == id_groceries).delete()
         db.session.commit()
         ret.status = 200
         ret.mensaje= "Se elimino el grocery."

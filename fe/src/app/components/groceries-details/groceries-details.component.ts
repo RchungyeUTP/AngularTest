@@ -8,7 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-groceries-details',
-  imports: [MatButtonModule, CommonModule, MatButtonModule, MatCardModule, ],
+  imports: [MatButtonModule, CommonModule, MatButtonModule, MatCardModule,],
   templateUrl: './groceries-details.component.html',
   styleUrl: './groceries-details.component.scss'
 })
@@ -20,6 +20,7 @@ export class GroceriesDetailsComponent {
 
   constructor() {
     const groceriesId = Number(this.route.snapshot.params['id']);
+    console.log('groceriesId:', groceriesId);
     if (!isNaN(groceriesId)) {
       this.groceriesService.getGroceriesById(groceriesId).then((groceries) => {
         this.groceries = groceries;

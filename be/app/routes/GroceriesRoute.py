@@ -12,7 +12,7 @@ def GetAllGroceries():
     return result.jsonify()
 
 
-@app.route("/groceries/<id>", methods=["GET"])
+@app.route("/groceries/<id_grocery>", methods=["GET"])
 def GetGroceriesById(id_grocery):
     result = Groceries.GetGroceriesById(id_grocery)
     return result.jsonify()
@@ -30,7 +30,7 @@ def EditGroceries():
     return result.jsonify()
 
 
-@app.route("/groceries/delete/<id>", methods=["DELETE"])
+@app.route("/groceries/delete/<id_grocery>", methods=["DELETE"])
 def DeteleGroceries(id_grocery):
     result = Groceries.DeleteGroceries(id_grocery)
     return result.jsonify()

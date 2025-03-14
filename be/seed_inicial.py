@@ -18,14 +18,21 @@ def seed_database():
             {"name": "Pan Integral", "price": 2.50, "description": "Pan integral fresco, 500 g.", "photo": "https://superxtrapanama.vtexassets.com/arquivos/ids/159422-800-auto?v=637806400384930000&width=800&height=auto&aspect=true"},
             {"name": "Jugo de Naranja", "price": 4.00, "description": "Jugo de naranja natural, 1 litro.", "photo": "https://superxtrapanama.vtexassets.com/arquivos/ids/167329-800-auto?v=638035374797670000&width=800&height=auto&aspect=true"}
         ]
-    
+
         for grocery in groceries_data:
             if not Groceries.query.filter_by(name=grocery["name"]).first():
                 db.session.add(Groceries(**grocery))
 
-        user = Users(username="admin", password="admin123")
-        if not Users.query.filter_by(username=user.username).first():
-            db.session.add(user)
+        users_data = [
+            {"username": "admin", "password": "admin123"},
+            {"username": "user1", "password": "password1"},
+            {"username": "user2", "password": "password2"},
+            {"username": "user3", "password": "password3"}
+        ]
+
+        for user_data in users_data:
+            if not Users.query.filter_by(username=user_data["username"]).first():
+                db.session.add(Users(**user_data))
 
         db.session.commit()
         print("Datos iniciales insertados correctamente.")
