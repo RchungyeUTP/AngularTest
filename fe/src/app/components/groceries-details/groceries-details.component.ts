@@ -12,7 +12,7 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
   selector: 'app-groceries-details',
   imports: [CommonModule, MaterialModule],
   templateUrl: './groceries-details.component.html',
-  styleUrl: './groceries-details.component.scss' 
+  styleUrl: './groceries-details.component.scss'
 })
 
 export class GroceriesDetailsComponent {
@@ -50,7 +50,7 @@ export class GroceriesDetailsComponent {
         width: '400px',
         data: { name: this.groceries.name }
       });
-  
+
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
           this.groceriesService.deleteGroceries(this.groceries!.id_groceries).then(() => {
@@ -63,7 +63,7 @@ export class GroceriesDetailsComponent {
       });
     }
   }
-  
+
 
 }
 
