@@ -3,9 +3,15 @@
         <img src="{{ groceries.photo }}" class="card-img-top"
             style="max-width: 400px; max-height: 400px; object-fit: cover;" alt="Photo of {{ groceries.name }}">
         <div class="card-body">
-            <h5 class="card-title">{{ groceries.name }}</h5>
-            <p class="card-text">{{ groceries.description }}</p>
+            <h3 class="card-title">Articulo: {{ groceries.name }}</h3>
+            <p class="card-text">Descripción: {{ groceries.description }}</p>
             <p class="card-text"><strong>Precio:</strong> {{ groceries.price }}</p>
         </div>
+        <button mat-button (click)="editGroceryDialog()" class="btn btn-primary w-100">
+            Editar Articulo
+        </button>
+        <button mat-button (click)="deleteGroceryDialog()" class="btn btn-danger w-100">
+            Eliminar
+        </button>
     </div>
 </section>

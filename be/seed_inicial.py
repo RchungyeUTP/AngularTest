@@ -24,10 +24,10 @@ def seed_database():
                 db.session.add(Groceries(**grocery))
 
         users_data = [
-            {"username": "admin", "password": "admin123"},
-            {"username": "user1", "password": "password1"},
-            {"username": "user2", "password": "password2"},
-            {"username": "user3", "password": "password3"}
+            {"username": "admin", "password": "admin1234"},
+            {"username": "user1", "password": "pass1234"},
+            {"username": "user2", "password": "pass1234"},
+            {"username": "user3", "password": "pass1234"}
         ]
 
         for user_data in users_data:
