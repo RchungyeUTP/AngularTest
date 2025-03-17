@@ -34,10 +34,8 @@ export class GroceriesService {
   async editGroceries(grocery: Groceries): Promise<Groceries> {
     const response = await fetch(`${environment.BE_API_URL}/groceries/edit`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(grocery)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(grocery),
     });
     return await response.json();
   }
