@@ -12,10 +12,8 @@ const MaterialComponents = [
   MatCardModule,
   MatButtonModule,
   MatDialogModule,
-  ActionDialogComponent,
   MatFormFieldModule,
   MatInputModule,
-  ConfirmDialogComponent,
 ];
 
 @NgModule({
